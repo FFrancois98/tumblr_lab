@@ -11,6 +11,7 @@ import AlamofireImage
 
 class PhotosViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
+    var image: UIImage!
 
     var posts: [[String: Any]] = []
     var refreshControl: UIRefreshControl!
@@ -28,7 +29,26 @@ class PhotosViewController: UIViewController, UITableViewDelegate,UITableViewDat
         tableView.dataSource = self
         tableView.rowHeight = 200
         
-        fetchPosts()        
+        //imageView.image = image
+        
+        fetchPosts()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: index, animated: true)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let cell = sender as! UITableViewCell
+        
+        if let indexPath = tableView.indexPath(for: cell) {
+            let post = posts[indexPath.row]
+            let vc = segue.destination as! PhotoDetailsViewController
+            vc.post = post
+        }
         
     }
     
