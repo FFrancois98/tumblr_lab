@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8UX-Ig-bzQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1850" y="145"/>
+            <point key="canvasLocation" x="1848.8" y="144.3778110944528"/>
         </scene>
         <!--Photo Details View Controller-->
         <scene sceneID="LE3-UC-MSE">
